@@ -1,9 +1,9 @@
 services:
-  # Service Web PHP
   - type: web
     name: connectafriq
-    env: docker
+    runtime: docker
     dockerfilePath: ./Dockerfile
+    plan: free
     envVars:
       - key: DB_TYPE
         value: pgsql
@@ -30,6 +30,4 @@ services:
 
 databases:
   - name: connectafriq-db
-    databaseName: connectafriq
-    user: connectafriq_user
     plan: free
