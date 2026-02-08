@@ -1,0 +1,33 @@
+services:
+  # Service Web PHP
+  - type: web
+    name: connectafriq
+    env: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DB_HOST
+        fromDatabase:
+          name: connectafriq-db
+          property: host
+      - key: DB_NAME
+        fromDatabase:
+          name: connectafriq-db
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: connectafriq-db
+          property: user
+      - key: DB_PASS
+        fromDatabase:
+          name: connectafriq-db
+          property: password
+      - key: DB_PORT
+        fromDatabase:
+          name: connectafriq-db
+          property: port
+
+databases:
+  - name: connectafriq-db
+    databaseName: connectafriq
+    user: connectafriq_user
+    plan: free

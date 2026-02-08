@@ -1,0 +1,21 @@
+# Fichiers de configuration locale
+.env
+.env.local
+
+# Logs
+*.log
+error_log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dépendances
+/vendor/
+/node_modules/

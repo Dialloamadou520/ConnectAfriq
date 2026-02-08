@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ConnectAfriq — Votre Avenir, Notre Mission</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<!-- ─── TOPBAR ─── -->
+<nav class="topbar">
+  <div class="logo">
+    <div class="logo-icon">🌍</div>
+    Connect<span>Afriq</span>
+  </div>
+  <div class="nav-links">
+    <a onclick="goPage('home')" class="active" data-page="home">Accueil</a>
+    <a onclick="goPage('entreprises')" data-page="entreprises">Entreprises</a>
+    <a onclick="goPage('projects')" data-page="projects">Projets</a>
+    <a onclick="goPage('mentorship')" data-page="mentorship">Mentorat</a>
+    <a onclick="goPage('inscription')" data-page="inscription">Inscription</a>
+    <a onclick="goPage('dashboard')" data-page="dashboard" id="nav-dashboard" style="display:none;">Dashboard</a>
+  </div>
+  <button class="nav-cta" onclick="goPage('inscription')">Commencer</button>
+  <button class="mobile-nav-btn" onclick="toggleMobile()">☰</button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a onclick="goPage('home');closeMobile()">🏠 Accueil</a>
+  <a onclick="goPage('entreprises');closeMobile()">🏢 Entreprises</a>
+  <a onclick="goPage('projects');closeMobile()">🤝 Projets</a>
+  <a onclick="goPage('mentorship');closeMobile()">👥 Mentorat</a>
+  <a onclick="goPage('inscription');closeMobile()">📝 Inscription</a>
+  <a onclick="goPage('dashboard');closeMobile()" id="mobile-dashboard" style="display:none;">📊 Dashboard</a>
+</div>
+<!-- ═══════════ HOME ═══════════ -->
+<section class="page active" id="page-home">
+  <!-- hero -->
+  <div class="hero">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge"><div class="dot"></div> Plateforme d'insertion professionnelle #1 au Sénégal</div>
+      <h1>Construis ton avenir.<br><span class="grad">Dès aujourd'hui.</span></h1>
+      <p>ConnectAfriq met en relation les jeunes Sénégalais avec les meilleurs stages et opportunités d'emploi. Une porte ouverte vers une carrière réussie.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="goPage('inscription')">📄 Je m'inscris — Gratuit</button>
+        <button class="btn-secondary" onclick="goPage('entreprises')">🏢 Voir les entreprises</button>
+      </div>
+    </div>
+  </div>
+  <!-- stats -->
+  <div class="stats-strip reveal">
+    <div class="stat"><div class="stat-number" data-target="4200">0</div><div class="stat-label">Jeunes accompagnés</div></div>
+    <div class="stat"><div class="stat-number" data-target="380">0</div><div class="stat-label">Entreprises partenaires</div></div>
+    <div class="stat"><div class="stat-number" data-target="1850">0</div><div class="stat-label">Stages & emplois proposés</div></div>
+    <div class="stat"><div class="stat-number" data-target="92">0</div><div class="stat-label">% de taux de placement</div></div>
+  </div>
+  <!-- about long text -->
+  <div class="about-section">
+    <div class="reveal">
+      <div class="section-label">À propos de nous</div>
+      <h2>Une mission née du besoin de changer les choses.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Au Sénégal, les jeunes diplômés sont confrontés à un marché du travail complexe où les opportunités semblent souvent hors de portée. Le manque de réseau, d'information et d'accès aux entreprises créent un fossé entre la formation et l'emploi. ConnectAfriq a été créée pour combler ce fossé.</p>
+        <p>Notre plateforme est bien plus qu'un simple annuaire de stages. C'est un ecosystème complet pensé pour accompagner chaque jeune depuis la fin de ses études jusqu'à son premier poste. Nous travaillons en partenariat avec des centaines d'entreprises dakaroises et régionales pour vous ouvrir des portes qui étaient jusque-là fermées.</p>
+        <p>En rejoignant ConnectAfriq, vous accédez à une communauté de jeunes professionnels qui se soutiennent mutuellement, à des ateliers de préparation à l'entretien, à des conseils CV personnalisés et à un suivi individuel par nos conseillers en insertion. Notre équipe, composée de professionnels RH et d'anciens jeunes diplômés, comprend exactement vos défis et vous guide à chaque étape.</p>
+        <p>Ensemble, nous construisons une génération de leaders économiques sénégalais. Votre parcours commence ici — et nous serons à vos côtés à chaque pas.</p>
+      </div>
+      <div class="about-cards reveal">
+        <div class="about-card">
+          <div class="about-card-icon icon-green">🎯</div>
+          <div><h4>Accompagnement ciblé</h4><p>Un profil personnel et des recommandations adaptées à votre niveau et vos compétences.</p></div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon icon-blue">💼</div>
+          <div><h4>Offres exclusives</h4><p>Accès à des stages et postes non publiés, trouvés directement auprès de nos partenaires.</p></div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon icon-orange">📚</div>
+          <div><h4>Ateliers & Formation</h4><p>Sessions en ligne et en présentiel pour préparer vos entretiens et rédiger votre CV.</p></div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon icon-pink">🤝</div>
+          <div><h4>Réseau & Communauté</h4><p>Connectez-vous avec des alumni et des professionnels du secteur qui peuvent vous aider.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- comment ça marche -->
+  <div class="how-section reveal">
+    <div class="how-inner">
+      <div class="section-label" style="text-align:center">Comment ça marche</div>
+      <h2>En 4 étapes simples</h2>
+      <div class="steps">
+        <div class="step"><div class="step-number">01</div><div class="step-icon">📝</div><h3>Vous vous inscrivez</h3><p>Créez votre profil en quelques minutes avec vos diplômes et compétences.</p></div>
+        <div class="step"><div class="step-number">02</div><div class="step-icon">🔍</div><h3>On analyse votre profil</h3><p>Notre algorithme analyse vos informations et vous oriente vers les meilleures opportunités.</p></div>
+        <div class="step"><div class="step-number">03</div><div class="step-icon">📨</div><h3>Vous recevez des offres</h3><p>Des entreprises partenaires vous contactent directement avec des offres adaptées.</p></div>
+        <div class="step"><div class="step-number">04</div><div class="step-icon">🎉</div><h3>Vous démarrez !</h3><p>Notre équipe vous accompagne jusqu'à votre prise de fonction et même après.</p></div>
+      </div>
+    </div>
+  </div>
+  <!-- events -->
+  <div class="events-section reveal">
+    <div class="section-label" style="text-align:center">Événements & Ateliers</div>
+    <h2 style="text-align:center; margin-bottom:40px;">Participez à nos sessions innovantes</h2>
+    <div class="events-grid">
+      <div class="event-card">
+        <div class="event-date">15 Fév 2026 - 14h</div>
+        <div class="event-title">Atelier AI pour CV Parfait</div>
+        <p class="event-desc">Apprenez à utiliser l'IA pour optimiser votre CV et attirer les recruteurs.</p>
+        <button class="event-btn" onclick="showToast('Inscription réussie !', 'Vous êtes inscrit à l\'atelier AI pour CV.'); earnPoints(50);">S'inscrire</button>
+      </div>
+      <div class="event-card">
+        <div class="event-date">22 Fév 2026 - 10h</div>
+        <div class="event-title">Webinaire: Réseautage Digital</div>
+        <p class="event-desc">Découvrez des stratégies innovantes pour bâtir votre réseau sur LinkedIn et X.</p>
+        <button class="event-btn" onclick="showToast('Inscription réussie !', 'Vous êtes inscrit au webinaire Réseautage Digital.'); earnPoints(50);">S'inscrire</button>
+      </div>
+      <div class="event-card">
+        <div class="event-date">01 Mars 2026 - 16h</div>
+        <div class="event-title">Hackathon Emploi Vert</div>
+        <p class="event-desc">Participez à un hackathon pour des solutions durables dans l'emploi au Sénégal.</p>
+        <button class="event-btn" onclick="showToast('Inscription réussie !', 'Vous êtes inscrit au Hackathon Emploi Vert.'); earnPoints(100);">S'inscrire</button>
+      </div>
+    </div>
+  </div>
+  <!-- testimonial -->
+  <div class="testimonial-section reveal">
+    <div class="testimonial-inner">
+      <div class="section-label" style="text-align:center">Témoignages</div>
+      <div class="testimonial-card">
+        <p>Grâce à ConnectAfriq, j'ai trouvé un stage en seulement deux semaines après mon inscription. L'équipe m'a aidé à préparer mon entretien et à revoir mon CV. C'est vraiment une plateforme qui change la vie des jeunes diplômés sénégalais !</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AM</div>
+          <div class="testimonial-author-info"><h4>Aminata Marlène Diallo</h4><span>Diplômée BTS Comptabilité — Dakar</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- CTA -->
+  <div class="cta-banner reveal">
+    <h2>Prêt à démarrer votre aventure ?</h2>
+    <p>Plus de 4 000 jeunes ont déjà fait confiance à ConnectAfriq. C'est votre tour.</p>
+    <button class="btn-primary" onclick="goPage('inscription')">📄 Créer mon profil gratuitement</button>
+  </div>
+</section>
+<!-- ═══════════ ENTREPRISES ═══════════ -->
+<section class="page" id="page-entreprises">
+  <div class="entreprises-hero reveal">
+    <div class="section-label">Entreprises partenaires</div>
+    <h1>Découvrez les entreprises qui recrutent</h1>
+    <p>Parcourez nos entreprises partenaires, explorez leurs offres de stages et d'emploi, et faites la première demande en un clic.</p>
+  </div>
+  <!-- search -->
+  <div class="search-wrap reveal">
+    <span class="search-icon">🔍</span>
+    <input type="text" placeholder="Rechercher une entreprise, un secteur…" id="searchEntreprise" oninput="filterCompanies()" />
+  </div>
+  <!-- filters -->
+  <div class="filters reveal" id="filterBtns">
+    <button class="filter-btn active" onclick="setFilter(this,'tous')">Tous</button>
+    <button class="filter-btn" onclick="setFilter(this,'tech')">Tech & Digital</button>
+    <button class="filter-btn" onclick="setFilter(this,'finance')">Finance</button>
+    <button class="filter-btn" onclick="setFilter(this,'sante')">Santé</button>
+    <button class="filter-btn" onclick="setFilter(this,'education')">Éducation</button>
+    <button class="filter-btn" onclick="setFilter(this,'commerce')">Commerce</button>
+    <button class="filter-btn" onclick="setFilter(this,'telecom')">Télécoms</button>
+  </div>
+  <!-- recommendations -->
+  <div class="recommendations reveal" id="ai-recs" style="display:none;">
+    <h3>Recommandations AI pour vous</h3>
+    <div class="recommendation-list" id="rec-list"></div>
+  </div>
+  <!-- grid -->
+  <div class="companies-grid" id="companiesGrid"></div>
+</section>
+<!-- ═══════════ PROJECTS PAGE (Nouvelle Fonctionnalité 4) ═══════════ -->
+<section class="page" id="page-projects">
+  <div class="entreprises-hero reveal">
+    <div class="section-label">Projets Collaboratifs</div>
+    <h1>Rejoignez ou Créez des Projets pour Construire votre Portfolio</h1>
+    <p>Collaborez avec d'autres jeunes sur des projets réels pour gagner de l'expérience et des compétences pratiques.</p>
+  </div>
+  <div class="projects-grid reveal" id="projectsGrid"></div>
+  <button class="btn-primary" style="display:block; margin:0 auto 40px;" onclick="createProject()">Créer un Nouveau Projet</button>
+</section>
+<!-- ═══════════ MENTORSHIP PAGE (Nouvelle Fonctionnalité 2) ═══════════ -->
+<section class="page" id="page-mentorship">
+  <div class="entreprises-hero reveal">
+    <div class="section-label">Programme de Mentorat</div>
+    <h1>Trouvez un Mentor pour Booster votre Carrière</h1>
+    <p>Connectez-vous avec des professionnels expérimentés pour des conseils personnalisés et des sessions de guidance.</p>
+  </div>
+  <div class="mentors-grid reveal" id="mentorsGrid"></div>
+</section>
+<!-- ═══════════ INSCRIPTION ═══════════ -->
+<section class="page" id="page-inscription">
+  <div class="inscription-hero reveal">
+    <div class="section-label">Inscription</div>
+    <h1>Créez votre profil en moins de 3 minutes</h1>
+    <p>Choisissez votre type de compte et remplissez le formulaire pour commencer votre parcours.</p>
+  </div>
+  <div class="inscription-wrap">
+    <!-- left: form -->
+    <div class="reveal">
+      <div class="tab-toggle">
+        <button class="tab-btn active" onclick="switchTab('jeune',this)">🎓 Je suis un jeune</button>
+        <button class="tab-btn" onclick="switchTab('entreprise',this)">🏢 Je suis une entreprise</button>
+      </div>
+      <!-- TAB JEUNE -->
+      <div class="tab-content active" id="tab-jeune">
+        <div class="form-card">
+          <h3>Profil du jeune diplômé</h3>
+          <p>Remplissez ces informations pour que nous puissions vous orienter vers les meilleures opportunités.</p>
+          <div class="form-row">
+            <div class="form-group"><label>Prénom</label><input type="text" id="jeune-prenom" placeholder="Ex: Aminata" /></div>
+            <div class="form-group"><label>Nom</label><input type="text" id="jeune-nom" placeholder="Ex: Diallo" /></div>
+          </div>
+          <div class="form-group"><label>Adresse email</label><input type="email" id="jeune-email" placeholder="aminata.diallo@email.com" /></div>
+          <div class="form-group"><label>Numéro de téléphone</label><input type="tel" id="jeune-tel" placeholder="+221 XX XX XX XX" /></div>
+          <div class="form-row">
+            <div class="form-group"><label>Ville</label><input type="text" id="jeune-ville" placeholder="Ex: Dakar" /></div>
+            <div class="form-group"><label>Région</label><select id="jeune-region"><option>Dakar</option><option>Saint-Louis</option><option>Thiès</option><option>Kaolack</option><option>Ziguinchor</option><option>Touba</option><option>Autre</option></select></div>
+          </div>
+          <div class="form-group"><label>Niveau de diplôme</label>
+            <select id="jeune-diplome"><option>BAC</option><option>BTS / DUT</option><option>Licence (L3)</option><option>Master (M2)</option><option>École d'ingénieur</option><option>Autre</option></select>
+          </div>
+          <div class="form-group"><label>Domaine d'études</label><input type="text" id="jeune-domaine" placeholder="Ex: Informatique, Comptabilité…" /></div>
+          <div class="form-group"><label>Type d'opportunité recherchée</label>
+            <select id="jeune-type"><option>Stage (obligatoire)</option><option>Stage (volontaire)</option><option>Emploi temps plein</option><option>Emploi temps partiel</option><option>Alternance</option></select>
+          </div>
+          <div class="form-group"><label>Compétences principales</label><textarea id="jeune-competences" placeholder="Ex: Python, gestion de projet, communication…"></textarea></div>
+          <div class="form-group"><label>Mot de passe</label><input type="password" id="jeune-pwd" placeholder="Min 8 caractères" /></div>
+          <!-- cv builder -->
+          <div class="cv-builder">
+            <h4>Générateur de CV AI (Optionnel)</h4>
+            <textarea id="cv-input" placeholder="Collez votre CV brut ici..."></textarea>
+            <button class="cv-btn" onclick="generateCV()">Générer CV Optimisé</button>
+            <p id="cv-output" style="margin-top:12px; white-space:pre-wrap; display:none;"></p>
+          </div>
+          <button class="btn-submit" onclick="submitForm('jeune')">✨ Créer mon compte</button>
+        </div>
+      </div>
+      <!-- TAB ENTREPRISE -->
+      <div class="tab-content" id="tab-entreprise">
+        <div class="form-card">
+          <h3>Profil Entreprise</h3>
+          <p>Enregistrez votre entreprise pour publier des offres de stage et d'emploi auprès des jeunes Sénégalais.</p>
+          <div class="form-group"><label>Nom de l'entreprise</label><input type="text" id="ent-nom" placeholder="Ex: Tech Afrique SAS" /></div>
+          <div class="form-group"><label>Personne de contact</label><input type="text" id="ent-contact" placeholder="Ex: Jean-Pierre Samba" /></div>
+          <div class="form-group"><label>Poste du contact</label><input type="text" id="ent-poste" placeholder="Ex: Responsable RH" /></div>
+          <div class="form-group"><label>Email professionnel</label><input type="email" id="ent-email" placeholder="rh@techafrique.com" /></div>
+          <div class="form-group"><label>Téléphone</label><input type="tel" id="ent-tel" placeholder="+221 XX XX XX XX" /></div>
+          <div class="form-group"><label>Secteur d'activité</label>
+            <select id="ent-secteur"><option>Tech & Digital</option><option>Finance & Banque</option><option>Santé</option><option>Éducation</option><option>Commerce & Retail</option><option>Télécoms</option><option>Autre</option></select>
+          </div>
+          <div class="form-group"><label>Ville du siège</label><input type="text" id="ent-ville" placeholder="Ex: Dakar" /></div>
+          <div class="form-group"><label>Description de l'entreprise</label><textarea id="ent-desc" placeholder="Décrivez brièvement votre entreprise et ce que vous recherchez…"></textarea></div>
+          <div class="form-group"><label>Mot de passe</label><input type="password" id="ent-pwd" placeholder="Min 8 caractères" /></div>
+          <button class="btn-submit" onclick="submitForm('entreprise')">✨ Enregistrer mon entreprise</button>
+        </div>
+      </div>
+    </div>
+    <!-- right: info -->
+    <div class="inscription-info reveal">
+      <div class="info-card">
+        <div class="info-card-icon icon-green">🔒</div>
+        <div><h4>Données sécurisées</h4><p>Vos informations sont chiffrées et ne sont jamais partagées sans votre consentement.</p></div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon icon-blue">⚡</div>
+        <div><h4>Résultat rapide</h4><p>En moyenne, nos utilisateurs reçoivent une première opportunité en moins de 7 jours.</p></div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon icon-orange">🌟</div>
+        <div><h4>100% gratuit</h4><p>L'inscription et l'accès à toutes les opportunités sont entièrement gratuites pour les jeunes.</p></div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon icon-pink">📞</div>
+        <div><h4>Support 24/7</h4><p>Notre équipe est disponible pour vous aider à chaque étape de votre parcours.</p></div>
+      </div>
+      <!-- mini stats -->
+      <div class="form-card" style="margin-top:6px;">
+        <h3 style="margin-bottom:16px;">📊 Chiffres en direct</h3>
+        <div style="display:flex;justify-content:space-between;">
+          <div style="text-align:center"><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;color:var(--clr-accent);">127</div><div style="font-size:.75rem;color:var(--clr-muted);">Offres cette semaine</div></div>
+          <div style="text-align:center"><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;color:var(--clr-accent2);">48</div><div style="font-size:.75rem;color:var(--clr-muted);">Entreprises actives</div></div>
+          <div style="text-align:center"><div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;color:var(--clr-gold);">34</div><div style="font-size:.75rem;color:var(--clr-muted);">Placements auj.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══════════ DASHBOARD ═══════════ -->
+<section class="page" id="page-dashboard" style="display:none;">
+  <div class="dashboard-header reveal">
+    <h2>Bonjour, <span id="dash-name"></span> !</h2>
+    <button class="dashboard-logout" onclick="logout()">Déconnexion</button>
+  </div>
+  <div class="dashboard-sections reveal">
+    <div class="dashboard-card">
+      <h3>Progression de votre profil</h3>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <p>Complétez votre profil pour plus de recommandations AI.</p>
+      <!-- Nouvelle Fonctionnalité 3: Simulateur de Carrière -->
+      <div class="career-simulator">
+        <h3>Simulateur de Carrière</h3>
+        <div class="sim-input">
+          <label>Ajoutez une compétence à simuler :</label>
+          <input type="text" id="sim-skill" placeholder="Ex: Leadership" />
+          <button onclick="simulateCareer()">Simuler</button>
+        </div>
+        <div class="sim-result" id="sim-result"></div>
+      </div>
+    </div>
+    <div class="dashboard-card">
+      <h3>Notifications</h3>
+      <div class="notifications" id="notifications"></div>
+    </div>
+    <div class="dashboard-card">
+      <h3>Matching AI</h3>
+      <div class="matching-list" id="matching-list"></div>
+    </div>
+    <div class="dashboard-card">
+      <h3>Statistiques Personnelles</h3>
+      <p>Postulations envoyées: <span id="dash-apps">0</span></p>
+      <p>Offres reçues: <span id="dash-offers">0</span></p>
+      <p>Taux de réponse: 75%</p>
+      <!-- Nouvelle Fonctionnalité 1: Système de Gamification -->
+      <div class="gamification">
+        <h3>Gamification</h3>
+        <p>Points: <span id="user-points">0</span></p>
+        <div class="badge-list" id="badge-list"></div>
+        <div class="leaderboard">
+          <h4>Leaderboard</h4>
+          <div id="leaderboard-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ─── TOAST ─── -->
+<div class="toast" id="toast">
+  <div class="toast-icon">🎉</div>
+  <div><h4 id="toastTitle">Bravo !</h4><p id="toastMsg">Votre compte a été créé avec succès.</p></div>
+</div>
+<!-- ─── CHAT WIDGET ─── -->
+<div class="chat-widget" id="chatWidget">
+  <div class="chat-header">
+    <h4>Support AI ConnectAfriq</h4>
+    <span class="chat-close" onclick="toggleChat()">✕</span>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="message message-bot">Bonjour ! Comment puis-je vous aider aujourd'hui ? (ex: "Comment postuler ?")</div>
+  </div>
+  <div class="chat-input">
+    <input type="text" id="chatInput" placeholder="Tapez votre message..." onkeydown="if(event.keyCode==13) sendMessage();" />
+    <button onclick="sendMessage()">Envoyer</button>
+  </div>
+</div>
+<!-- ─── FLOATING BUTTONS ─── -->
+<div class="fab-wrap" id="fabWrap">
+  <div class="fab-mini visible" onclick="goPage('inscription')" style="transition-delay:.0s">
+    <span class="fab-label">S'inscrire</span>📝
+  </div>
+  <div class="fab-mini visible" onclick="goPage('entreprises')" style="transition-delay:.1s">
+    <span class="fab-label">Entreprises</span>🏢
+  </div>
+  <div class="fab-mini visible" onclick="scrollTop()" style="transition-delay:.2s">
+    <span class="fab-label">Haut de page</span>⬆️
+  </div>
+  <button class="fab fab-chat" onclick="toggleChat()" style="margin-top:12px;"><i class="fas fa-comment-dots"></i></button>
+  <button class="fab" onclick="toggleFab()">
+    <span id="fabIcon">+</span>
+  </button>
+</div>
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="logo" style="justify-content:center;margin-bottom:12px">
+    <div class="logo-icon">🌍</div>
+    Connect<span>Afriq</span>
+  </div>
+  <p style="color:var(--clr-muted);font-size:.78rem;">© 2025 ConnectAfriq — Tous droits réservés. Dakar, Sénégal.</p>
+  <p style="color:var(--clr-muted);font-size:.72rem;margin-top:6px;">Une initiative pour l'insertion professionnelle des jeunes Sénégalais 🇸🇳</p>
+</footer>
+<!-- ═══════ SCRIPT ═══════ -->
+<script src="app.js"></script>
+</body>
+</html>
