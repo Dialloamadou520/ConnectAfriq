@@ -1,7 +1,10 @@
 FROM php:8.2-apache
 
-# Installer les extensions PHP nécessaires
-RUN docker-php-ext-install pdo pdo_mysql mysqli
+# Installer les dépendances pour PostgreSQL
+RUN apt-get update && apt-get install -y libpq-dev
+
+# Installer les extensions PHP nécessaires (MySQL + PostgreSQL)
+RUN docker-php-ext-install pdo pdo_mysql mysqli pdo_pgsql pgsql
 
 # Activer mod_rewrite pour Apache
 RUN a2enmod rewrite

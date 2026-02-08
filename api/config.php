@@ -7,12 +7,13 @@
 define('DEBUG_MODE', true);
 
 // Configuration de la base de données (utilise les variables d'environnement en production)
+define('DB_TYPE', getenv('DB_TYPE') ?: 'mysql'); // 'mysql' ou 'pgsql'
 define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
 define('DB_NAME', getenv('DB_NAME') ?: 'connectafriq');
 define('DB_USER', getenv('DB_USER') ?: 'root');
 define('DB_PASS', getenv('DB_PASS') ?: '');
-define('DB_PORT', getenv('DB_PORT') ?: '3306');
-define('DB_CHARSET', 'utf8mb4');
+define('DB_PORT', getenv('DB_PORT') ?: (DB_TYPE === 'pgsql' ? '5432' : '3306'));
+define('DB_CHARSET', 'utf8');
 
 // Configuration de l'application
 define('APP_NAME', 'ConnectAfriq');
@@ -31,20 +32,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-// Connexion PDO à la base de données
+// Connexion PDO à la base de données (supporte MySQL et PostgreSQL)
 function getDB() {
     static $pdo = null;
     
     if ($pdo === null) {
         try {
-            $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
+            if (DB_TYPE === 'pgsql') {
+                $dsn = "pgsql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME;
+            } else {
+                $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
+            }
             $options = [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
                 PDO::ATTR_EMULATE_PREPARES => false,
             ];
             $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
+            
+            // Pour PostgreSQL, définir le charset
+            if (DB_TYPE === 'pgsql') {
+                $pdo->exec("SET NAMES 'UTF8'");
+            }
         } catch (PDOException $e) {
+            if (DEBUG_MODE) {
+                sendError('Erreur DB: ' . $e->getMessage(), 500);
+            }
             sendError('Erreur de connexion à la base de données', 500);
         }
     }

@@ -5,6 +5,8 @@ services:
     env: docker
     dockerfilePath: ./Dockerfile
     envVars:
+      - key: DB_TYPE
+        value: pgsql
       - key: DB_HOST
         fromDatabase:
           name: connectafriq-db
